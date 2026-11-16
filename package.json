@@ -1,0 +1,40 @@
+{
+  "name": "readme2site",
+  "version": "0.1.0",
+  "description": "Turn any GitHub README into a beautiful single-file landing page. One command, zero config.",
+  "keywords": ["readme", "landing-page", "github", "static-site", "generator", "cli", "documentation"],
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "readme2site": "dist/cli.js"
+  },
+  "files": ["dist", "README.md", "LICENSE"],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "dev": "tsx src/cli.ts",
+    "build": "tsup",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "marked": "^14.1.0",
+    "open": "^10.1.0",
+    "sanitize-html": "^2.13.0",
+    "zod": "^3.23.8"
+  },
+  "optionalDependencies": {
+    "@anthropic-ai/sdk": "^0.39.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/sanitize-html": "^2.13.0",
+    "tsup": "^8.3.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0"
+  }
+}
